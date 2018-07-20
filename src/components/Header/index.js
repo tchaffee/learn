@@ -20,11 +20,6 @@ function Header() {
             <Link to='/'>Curriculum</Link>
           </li>
           <li>
-            <a href='https://forum.freecodecamp.org' target='_blank'>
-              Forum
-            </a>
-          </li>
-          <li>
             <UserState />
           </li>
         </ul>

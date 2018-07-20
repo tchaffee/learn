@@ -34,9 +34,20 @@ exports.buildChallenges$ = function buildChallenges$() {
     const time = challengeSpec.time;
     const isLocked = !!challengeSpec.isLocked;
     const message = challengeSpec.message;
-    const required = challengeSpec.required || [];
     const template = challengeSpec.template;
     const isPrivate = !!challengeSpec.isPrivate;
+
+    // GraphQL requires at least one full object shape or it will fail.
+    const required = challengeSpec.required || [{}];
+
+    required[0] = Object.assign(
+      required[0],
+      {
+        link: '',
+        raw: false,
+        src: ''
+      }
+    );
 
     console.log('TODD BUILD CHALLENGE');
     console.log(superBlock);
@@ -45,6 +56,7 @@ exports.buildChallenges$ = function buildChallenges$() {
     console.log(challengeSpec.required);
     console.log('required');
     console.log(required);
+
 
     // challenge file has no challenges...
     if (challengeSpec.challenges.length === 0) {
@@ -117,6 +129,10 @@ exports.buildChallenges$ = function buildChallenges$() {
 
       console.log('challenge.required');
       console.log(challenge.required);
+
+      console.log('challenge.files');
+      console.log(challenge.files);
+
 
       let tChallenge = _.omit(challenge, [
         'betaSolutions',

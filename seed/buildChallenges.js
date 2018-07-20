@@ -2,7 +2,7 @@
 require('babel-register');
 require('dotenv').load();
 const adler32 = require('adler32');
-const { getChallenges } = require('@freecodecamp/curriculum');
+const { getChallenges } = require('spiraladder-curriculum');
 const Rx = require('rxjs');
 const _ = require('lodash');
 const createDebugger = require('debug');
@@ -37,6 +37,14 @@ exports.buildChallenges$ = function buildChallenges$() {
     const required = challengeSpec.required || [];
     const template = challengeSpec.template;
     const isPrivate = !!challengeSpec.isPrivate;
+
+    console.log('TODD BUILD CHALLENGE');
+    console.log(superBlock);
+    console.log(blockName);
+    console.log('challengeSpec.required');
+    console.log(challengeSpec.required);
+    console.log('required');
+    console.log(required);
 
     // challenge file has no challenges...
     if (challengeSpec.challenges.length === 0) {
@@ -107,7 +115,10 @@ exports.buildChallenges$ = function buildChallenges$() {
       challenge.required = (challenge.required || []).concat(required);
       challenge.template = challenge.template || template;
 
-      return _.omit(challenge, [
+      console.log('challenge.required');
+      console.log(challenge.required);
+
+      let tChallenge = _.omit(challenge, [
         'betaSolutions',
         'betaTests',
         'hints',
@@ -121,6 +132,11 @@ exports.buildChallenges$ = function buildChallenges$() {
         'translations',
         'type'
       ]);
+
+      console.log('tChallenge');
+      console.log(tChallenge);
+
+      return tChallenge;
     });
   });
 };

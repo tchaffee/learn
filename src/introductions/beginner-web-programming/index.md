@@ -1,8 +1,8 @@
 ---
-title: Responsive Web Design
-superBlock: Responsive Web Design
+title: Beginner Web Programming
+superBlock: Beginner Web Programming
 ---
-## Introduction to Responsive Web Design
+## Beginner Web Programming
 
 This introduction is a stub
 

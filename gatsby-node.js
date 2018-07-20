@@ -14,6 +14,16 @@ exports.onCreateNode = function onCreateNode({ node, boundActionCreators }) {
     const slug = `/${dasherize(superBlock)}/${dasherize(block)}/${dasherize(
       title
     )}`;
+
+    console.log('onCreateNode');
+    console.log('slug');
+    console.log(slug);
+    console.log('block');
+    console.log(block);
+    console.log('tests');
+    console.log(tests);
+
+
     createNodeField({ node, name: 'slug', value: slug });
     createNodeField({ node, name: 'blockName', value: blockNameify(block) });
     createNodeField({ node, name: 'tests', value: tests });

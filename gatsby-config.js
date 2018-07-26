@@ -5,8 +5,8 @@ const { buildChallenges$ } = require('./seed/buildChallenges');
 
 module.exports = {
   siteMetadata: {
-    title: 'freeCodeCamp | Learn to code and help non-profits ',
-    siteUrl: 'https://learn.freecodecamp.org'
+    title: 'Spiraladder | Learn to code ',
+    siteUrl: 'https://learn.spiraladder.com'
   },
   proxy: {
     prefix: '/external',

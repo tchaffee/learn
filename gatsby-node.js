@@ -152,7 +152,7 @@ exports.modifyWebpackConfig = ({ config, stage }) => {
         HOME_PATH: JSON.stringify(
           process.env.HOME_PATH || 'http://localhost:3000'
         ),
-        STRIPE_PUBLIC_KEY: JSON.stringify(process.env.STRIPE_PULIC_KEY || '')
+        STRIPE_PUBLIC_KEY: JSON.stringify(process.env.STRIPE_PUBLIC_KEY || '')
       }
     ]);
     config.plugin('RemoveServiceWorkerPlugin', RmServiceWorkerPlugin, [

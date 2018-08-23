@@ -57,18 +57,9 @@ export const currentChallengeIdSelector = state =>
 
 export const shouldShowDonationSelector = state => {
   const completedChallenges = completedChallengesSelector(state);
-  const completionCount = completionCountSelector(state);
   const currentCompletedLength = completedChallenges.length;
-  // the user has not completed 9 challenges in total yet
-  if (currentCompletedLength < 9) {
-    return false;
-  }
-  // this will mean we are on the 10th submission in total for the user
-  if (completedChallenges.length === 9) {
-    return true;
-  }
-  // this will mean we are on the 3rd submission for this browser session
-  if (completionCount === 2) {
+  // Prompt every completed challenges.
+  if ((currentCompletedLength % 1) === 0) {
     return true;
   }
   return false;

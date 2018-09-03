@@ -50,7 +50,7 @@ const codingPrepRE = new RegExp('Interview Prep');
 function createSuperBlockTitle(str) {
   return codingPrepRE.test(str)
     ? `${str} (Thousands of hours of challenges)`
-    : `${str} Certification (300 hours)`;
+    : `${str} Lessons`;
 }
 
 export class SuperBlock extends PureComponent {

@@ -1,6 +1,6 @@
 {
-    "name": "Learn | freeCodeCamp",
-    "short_name": "Learn | freeCodeCamp",
+    "name": "Learn | Spiraladder",
+    "short_name": "Spiraladder",
     "icons": [
         {
             "src": "/assets/android-chrome-36x36.png",
@@ -48,7 +48,7 @@
             "type": "image/png"
         }
     ],
-    "theme_color": "#006400",
-    "background_color": "#006400",
+    "theme_color": "#ffffff",
+    "background_color": "#ffffff",
     "display": "standalone"
 }

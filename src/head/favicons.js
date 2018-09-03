@@ -7,7 +7,7 @@ const favicons = [
     sizes='180x180'
   />,
   <link
-    href='/assets/favicon-32x32.png'
+    href='/assets/favicon-32x32.png?v=2'
     rel='icon'
     sizes='32x32'
     type='image/png'
@@ -19,16 +19,26 @@ const favicons = [
     type='image/png'
   />,
   <link
-    href='/assets/favicon-16x16.png'
+    href='/assets/favicon-16x16.png?v=2'
     rel='icon'
     sizes='16x16'
     type='image/png'
   />,
-  <link href='/assets/site.webmanifest' rel='manifest' />,
-  <link color='#006400' href='/assets/safari-pinned-tab.svg' rel='mask-icon' />,
-  <meta content='#006400' name='msapplication-TileColor' />,
-  <meta content='/assets/mstile-144x144.png' name='msapplication-TileImage' />,
-  <meta content='#006400' name='theme-color' />
+  <link href='/assets/site.webmanifest?v=2' rel='manifest' />,
+  <link
+    color='#1098da'
+    href='/assets/safari-pinned-tab.svg?v=2'
+    rel='mask-icon'
+  />,
+  <link href='/favicon.ico?v=2 'rel='shortcut icon' />,
+  <meta content='Spiraladder' name='apple-mobile-web-app-title' />,
+  <meta content='Spiraladder' name='application-name'/>,
+  <meta content='#ffaa2b' name='msapplication-TileColor' />,
+  <meta
+    content='/assets/mstile-144x144.png?v=2'
+    name='msapplication-TileImage'
+  />,
+  <meta content='#ffffff' name='theme-color' />
 ];
 
 export default favicons;

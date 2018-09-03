@@ -3,7 +3,9 @@ import Media from 'react-media';
 
 const fCClogo =
   'https://www.dropbox.com/s/4552naguuj98xpw/spiraladder-logo-150x25.png?raw=1';
-const fCCglyph = 'https://www.dropbox.com/s/n29l7rkjpuq22tb/spiraladder-icon-transparent-300x300.png?raw=1';
+const fCCglyph =
+  'https://www.dropbox.com/s/hg46kc4pc492e32/' +
+  'spiraladder-responsive-logo-small-transparent-448x315.png?raw=1';
 
 function NavLogo() {
   return (

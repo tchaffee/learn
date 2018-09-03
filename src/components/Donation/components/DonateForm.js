@@ -69,7 +69,7 @@ class DonateForm extends PureComponent {
         donationState: {
           ...state.donationState,
           error:
-            'We need a valid email address to send your donation tax receipt to'
+            'We need a valid email address to send your receipt'
         }
       }));
     }
@@ -147,9 +147,8 @@ class DonateForm extends PureComponent {
     return (
       <Fragment>
         <p>
-          freeCodeCamp is completely free. But it costs our nonprofit a lot of
-          money to run it. Help us pay for servers. Set up a tax-deductible
-          monthly donation you can afford.
+          During our beta you can pay what you want for Spiraladder. Set up a
+          monthly subscription now to help us create more lessons for you.
         </p>
         <div id='donate-amount-panel'>
           <ul>{this.renderAmountButtons()}</ul>
@@ -169,7 +168,7 @@ class DonateForm extends PureComponent {
     return (
       <div className='donation-email-container'>
         <label>
-          Email where we should send your donation tax receipt:
+          Email where we should send your receipt:
           <input
             onChange={this.handleEmailChange}
             placeholder='email@example.com'

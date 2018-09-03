@@ -46,7 +46,7 @@ class CardForm extends PureComponent {
           disabled={!isFormValid}
           type='submit'
           >
-          {`Confirm Monthly Donation of $${amount}`}
+          {`Confirm Monthly Subscription of $${amount}`}
         </Button>
       </form>
     );

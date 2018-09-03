@@ -45,7 +45,7 @@ export const ChallengeNode = PropTypes.shape({
   required: PropTypes.arrayOf(
     PropTypes.shape({
       link: PropTypes.string,
-      raw: PropTypes.string,
+      raw: PropTypes.bool,
       src: PropTypes.string
     })
   ),

@@ -1,3 +1,4 @@
+/* global STRIPE_PUBLIC_KEY */
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
@@ -38,7 +39,7 @@ const propTypes = {
   show: PropTypes.bool
 };
 
-const stripeKey = 'pk_live_E6Z6xPM8pEsJziHW905zpAvF';
+const stripeKey = STRIPE_PUBLIC_KEY;
 
 class DonationModal extends PureComponent {
   constructor(...props) {
@@ -98,7 +99,7 @@ class DonationModal extends PureComponent {
           <Modal bsSize='lg' className='donation-modal' show={show}>
             <Modal.Header className='fcc-modal'>
               <Modal.Title className='text-center'>
-                Support Our NonProfit
+                Support Spiraladder
               </Modal.Title>
             </Modal.Header>
             <Modal.Body>

@@ -1,3 +1,4 @@
+/* global HOME_PATH */
 import React from 'react';
 import Link from 'gatsby-link';
 import FCCSearch from 'react-freecodecamp-search';
@@ -11,18 +12,13 @@ function Header() {
   return (
     <header>
       <nav id='top-nav'>
-        <a className='home-link' href='https://freecodecamp.org'>
+        <a className='home-link' href={HOME_PATH}>
           <NavLogo />
         </a>
         <FCCSearch />
         <ul id='top-right-nav'>
           <li>
             <Link to='/'>Curriculum</Link>
-          </li>
-          <li>
-            <a href='https://forum.freecodecamp.org' target='_blank'>
-              Forum
-            </a>
           </li>
           <li>
             <UserState />

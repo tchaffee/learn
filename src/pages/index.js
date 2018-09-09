@@ -34,7 +34,7 @@ const IndexPage = ({
   }
 }) => (
   <div className='index-page-wrapper'>
-    <Helmet title='Welcome to learn.freeCodeCamp!' />
+    <Helmet title='Welcome to learn.spiraladder!' />
     <Spacer />
     <Spacer />
     <h2>Welcome to the Spiraladder curriculum</h2>

@@ -49,15 +49,6 @@ exports.buildChallenges$ = function buildChallenges$() {
       }
     );
 
-    console.log('TODD BUILD CHALLENGE');
-    console.log(superBlock);
-    console.log(blockName);
-    console.log('challengeSpec.required');
-    console.log(challengeSpec.required);
-    console.log('required');
-    console.log(required);
-
-
     // challenge file has no challenges...
     if (challengeSpec.challenges.length === 0) {
       return Rx.Observable.of([{ block: 'empty ' + blockName }]);
@@ -127,13 +118,6 @@ exports.buildChallenges$ = function buildChallenges$() {
       challenge.required = (challenge.required || []).concat(required);
       challenge.template = challenge.template || template;
 
-      console.log('challenge.required');
-      console.log(challenge.required);
-
-      console.log('challenge.files');
-      console.log(challenge.files);
-
-
       let tChallenge = _.omit(challenge, [
         'betaSolutions',
         'betaTests',
@@ -148,9 +132,6 @@ exports.buildChallenges$ = function buildChallenges$() {
         'translations',
         'type'
       ]);
-
-      console.log('tChallenge');
-      console.log(tChallenge);
 
       return tChallenge;
     });

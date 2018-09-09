@@ -60,12 +60,6 @@ exports.createChallengePages = createPage => ({ node }, index, thisArray) => {
     return;
   }
 
-  console.log('TODD createChallengePages');
-  console.log('slug');
-  console.log(slug);
-  console.log('required');
-  console.log(required);
-
   createPage({
     path: slug,
     component: getTemplateComponent(challengeType),

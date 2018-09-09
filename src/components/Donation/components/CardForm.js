@@ -6,6 +6,7 @@ import StripCardForm from './StripeCardForm';
 
 const propTypes = {
   amount: PropTypes.number.isRequired,
+  coupon: PropTypes.string,
   handleSubmit: PropTypes.func.isRequired
 };
 
@@ -23,7 +24,7 @@ class CardForm extends PureComponent {
 
   submit(e) {
     e.preventDefault();
-    this.props.handleSubmit();
+    this.props.handleSubmit(this.state.isFormValid);
   }
 
   getValidationState(isFormValid) {
@@ -34,16 +35,29 @@ class CardForm extends PureComponent {
   }
 
   render() {
-    const { amount } = this.props;
+    const { amount, coupon } = this.props;
     const { isFormValid } = this.state;
+    let stripeCardForm;
+
+    let isFormEnabled = (coupon && coupon.length > 0) || isFormValid;
+
+    if (coupon && (coupon.length > 0)) {
+      stripeCardForm = null;
+    } else {
+      stripeCardForm = (<StripCardForm
+        coupon={this.props.coupon}
+        getValidationState={this.getValidationState}
+      />);
+    }
+
     return (
       <form className='donation-form' onSubmit={this.submit}>
-        <StripCardForm getValidationState={this.getValidationState} />
+        { stripeCardForm }
         <Button
           block={true}
           bsSize='lg'
           bsStyle='primary'
-          disabled={!isFormValid}
+          disabled={!isFormEnabled}
           type='submit'
           >
           {`Confirm Monthly Subscription of $${amount}`}

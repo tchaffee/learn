@@ -58,8 +58,10 @@ export const currentChallengeIdSelector = state =>
 export const shouldShowDonationSelector = state => {
   const completedChallenges = completedChallengesSelector(state);
   const currentCompletedLength = completedChallenges.length;
-  // Prompt every completed challenges.
-  if ((currentCompletedLength % 1) === 0) {
+  // Prompt every completed challenge after the third. This is something we
+  // might want to tune based on number of payments. We want the minimum
+  // reminder that will result in the max payments.
+  if ((currentCompletedLength > 3) && (currentCompletedLength % 1) === 0) {
     return true;
   }
   return false;

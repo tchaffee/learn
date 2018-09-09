@@ -7,6 +7,7 @@ import { injectStripe } from 'react-stripe-elements';
 import { postJSON$ } from '../../../templates/Challenges/utils/ajax-stream';
 
 const propTypes = {
+  coupon: PropTypes.string,
   email: PropTypes.string,
   maybeButton: PropTypes.func.isRequired,
   renderCompletion: PropTypes.func.isRequired,
@@ -30,12 +31,14 @@ class DonateForm extends PureComponent {
 
     this.state = {
       ...initialSate,
-      email: props.email
+      email: props.email,
+      coupon: null
     };
 
     this.buttonAmounts = [500, 1000, 3500, 5000, 25000];
 
     this.handleAmountClick = this.handleAmountClick.bind(this);
+    this.handleCouponChange = this.handleCouponChange.bind(this);
     this.handleEmailChange = this.handleEmailChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.isActive = this.isActive.bind(this);
@@ -53,6 +56,14 @@ class DonateForm extends PureComponent {
     }));
   }
 
+  handleCouponChange(e) {
+    const newValue = e.target.value;
+    return this.setState(state => ({
+      ...state,
+      coupon: newValue
+    }));
+  }
+
   handleEmailChange(e) {
     const newValue = e.target.value;
     return this.setState(state => ({
@@ -61,8 +72,8 @@ class DonateForm extends PureComponent {
     }));
   }
 
-  handleSubmit() {
-    const { email } = this.state;
+  handleSubmit(isCardDataValid) {
+    const { email, coupon } = this.state;
     if (!email || !isEmail(email)) {
       return this.setState(state => ({
         ...state,
@@ -73,20 +84,34 @@ class DonateForm extends PureComponent {
         }
       }));
     }
-    return this.props.stripe.createToken({ email }).then(({ error, token }) => {
-      if (error) {
-        return this.setState(state => ({
-          ...state,
-          donationState: {
-            ...state.donationState,
-            error:
-              'Something went wrong processing your donation. Your card' +
-              ' has not been charged.'
-          }
-        }));
-      }
+
+    console.log(this.state.donationState);
+
+    // No credit card data and we do have a coupon.
+    if (!isCardDataValid && coupon && coupon.length > 0) {
+      let token = {
+        email,
+        coupon
+      };
       return this.postDonation(token);
-    });
+    } else {
+
+      return this.props.stripe.createToken({ email, coupon })
+        .then(({ error, token }) => {
+          if (error) {
+            return this.setState(state => ({
+              ...state,
+              donationState: {
+                ...state.donationState,
+                error:
+                  'Something went wrong processing your donation. Your card' +
+                  ' has not been charged.'
+              }
+            }));
+          }
+          return this.postDonation(token);
+        });
+    }
   }
 
   isActive(amount) {
@@ -138,7 +163,7 @@ class DonateForm extends PureComponent {
           id={amount}
           onClick={this.handleAmountClick}
           tabIndex='-1'
-          >{`$${amount / 100}`}</a>
+          >{`R$${amount / 100}`}</a>
       </li>
     ));
   }
@@ -148,18 +173,39 @@ class DonateForm extends PureComponent {
       <Fragment>
         <p>
           During our beta you can pay what you want for Spiraladder. Set up a
-          monthly subscription now to help us create more lessons for you.
+          monthly subscription (Brazilian Currency only) now to help us create
+          more lessons for you.
         </p>
         <div id='donate-amount-panel'>
           <ul>{this.renderAmountButtons()}</ul>
         </div>
         {this.renderEmailInput()}
+        {this.renderCouponInput()}
         <CardForm
           amount={this.state.donationAmount / 100}
+          coupon={this.state.coupon}
           handleSubmit={this.handleSubmit}
         />
         {this.props.maybeButton()}
       </Fragment>
+    );
+  }
+
+  renderCouponInput() {
+    const { coupon } = this.state;
+    return (
+      <div className='donation-coupon-container'>
+        <label>
+          Get a coupon from our help chat so you don't have to pay:
+          <input
+            onChange={this.handleCouponChange}
+            placeholder='coupon-code'
+            required={false}
+            type='text'
+            value={coupon}
+          />
+        </label>
+      </div>
     );
   }
 

@@ -46,17 +46,6 @@ function ToolPanel({
           >
           Reset All Code
         </Button>
-        {guideUrl ? (
-          <Button
-            block={true}
-            bsStyle='primary'
-            className='btn-primary-invert'
-            href={guideUrl}
-            target='_blank'
-            >
-            Get a hint
-          </Button>
-        ) : null}
         <Button
           block={true}
           bsStyle='primary'

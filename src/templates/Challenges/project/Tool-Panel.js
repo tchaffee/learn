@@ -26,17 +26,6 @@ export class ToolPanel extends PureComponent {
     const { guideUrl, openHelpModal } = this.props;
     return (
       <div className='tool-panel-group project-tool-panel'>
-        {guideUrl && (
-          <Button
-            block={true}
-            bsStyle='primary'
-            className='btn-primary-invert'
-            href={guideUrl}
-            target='_blank'
-            >
-            Get a hint
-          </Button>
-        )}
         <Button
           block={true}
           bsStyle='primary'

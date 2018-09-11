@@ -3,7 +3,9 @@ import React, { PureComponent } from 'react';
 
 export class SigninPage extends PureComponent {
   componentWillMount() {
-    window.location = HOME_PATH + '/signin';
+    if (typeof window !== 'undefined') {
+      window.location = HOME_PATH + '/signin';
+    }
   }
 
   render() {

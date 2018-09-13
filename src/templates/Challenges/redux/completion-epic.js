@@ -139,7 +139,7 @@ export default function completionEpic(action$, { getState }) {
       const { isDonating } = userSelector(state);
       const isSignedIn = isSignedInSelector(state);
       const { nextChallengePath, introPath, challengeType } = meta;
-      const nextPath = push(introPath ? introPath : nextChallengePath);
+      const nextPath = introPath ? introPath : nextChallengePath;
       const next = of(push(isSignedIn ? nextPath : '/signin'));
       const showDonate = isDonating ? empty() : shouldShowDonate(state);
       const closeChallengeModal = of(closeModal('completion'));

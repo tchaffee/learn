@@ -39,7 +39,7 @@ function IntroductionPage({ data: { markdownRemark, allChallengeNode } }) {
   return (
     <Fragment>
       <Helmet>
-        <title>{block} | freeCodeCamp</title>
+        <title>{block} | Spiraladder </title>
       </Helmet>
       <FullWidthRow>
         <div

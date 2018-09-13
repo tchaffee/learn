@@ -4,9 +4,9 @@ Prerequisites | Minimum Version
 |---|---|
 node | ^8.11.x
 [yarn](https://yarnpkg.com/en/) | ^1.3.0
-[freeCodeCamp](https://github.com/freecodecamp/freecodecamp) | Running Locally
+[Spiraladder](https://github.com/spiraladder/Spiraladder) | Running Locally
 
-[freeCodeCamp/freeCodeCamp](https://github.com/freecodecamp/freecodecamp) currently holds the backend code for learn. The development process relies on this backend. You will see a message like below if you attemp to run `Learn` locally without it:
+[Spiraladder/Spiraladder](https://github.com/spiraladder/Spiraladder) currently holds the backend code for learn. The development process relies on this backend. You will see a message like below if you attemp to run `Learn` locally without it:
 
 ```sh
 error UNHANDLED EXCEPTION
@@ -20,7 +20,7 @@ error Command failed with exit code 1.
 2. Clone locally
 3. `yarn install`
 4. `git checkout -b <your-branch-name>`
-5. `yarn develop` (Be sure you have `freeCodeCamp` running locally as well)
+5. `yarn develop` (Be sure you have `Spiraladder` running locally as well)
 6. Make your changes
 7. Make a PR
 8. Bask in the glory of your accomplishments

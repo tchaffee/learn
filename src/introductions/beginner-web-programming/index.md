@@ -4,7 +4,7 @@ superBlock: Beginner Web Programming
 ---
 ## Beginner Web Programming
 
-This introduction is a stub
+This introduction is a stub and will be finished soon. You can continue with the lessons in this section.
 
-Help us make it real on [GitHub](https://github.com/freeCodeCamp/learn/tree/master/src/introductions).
+
  

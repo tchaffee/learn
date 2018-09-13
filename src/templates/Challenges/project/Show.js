@@ -107,7 +107,7 @@ export class Project extends PureComponent {
     const blockNameTitle = `${blockName} - ${title}`;
     return (
       <Fragment>
-        <Helmet title={`${blockNameTitle} | Learn freeCodeCamp}`} />
+        <Helmet title={`${blockNameTitle} | Learn Spiraladder }`} />
         <div className='project-show-wrapper'>
           <SidePanel
             className='full-height'

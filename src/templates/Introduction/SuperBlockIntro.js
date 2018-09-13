@@ -17,7 +17,7 @@ function SuperBlockIntroductionPage({ data: { markdownRemark } }) {
   return (
     <Fragment>
       <Helmet>
-        <title>{superBlock} | freeCodeCamp</title>
+        <title>{superBlock} | Spiraladder </title>
       </Helmet>
       <FullWidthRow>
         <div

@@ -1,3 +1,4 @@
+/* global HOME_PATH */
 import { of } from 'rxjs/observable/of';
 import { empty } from 'rxjs/observable/empty';
 import {
@@ -136,8 +137,10 @@ export default function completionEpic(action$, { getState }) {
       const state = getState();
       const meta = challengeMetaSelector(state);
       const { isDonating } = userSelector(state);
+      const isSignedIn = isSignedInSelector(state);
       const { nextChallengePath, introPath, challengeType } = meta;
-      const next = of(push(introPath ? introPath : nextChallengePath));
+      const nextPath = introPath ? introPath : nextChallengePath;
+      const next = of(push(isSignedIn ? nextPath : '/signin'));
       const showDonate = isDonating ? empty() : shouldShowDonate(state);
       const closeChallengeModal = of(closeModal('completion'));
       let submitter = () => of({ type: 'no-user-signed-in' });

@@ -34,12 +34,12 @@ const IndexPage = ({
   }
 }) => (
   <div className='index-page-wrapper'>
-    <Helmet title='Welcome to learn.freeCodeCamp!' />
+    <Helmet title='Welcome to learn.spiraladder!' />
     <Spacer />
     <Spacer />
     <h2>Welcome to the Spiraladder curriculum</h2>
     <p>We have thousands of coding lessons to help you improve your skills.</p>
-    <p>You can earn each certification by completing its final projects.</p>
+    <p>Click any topic below to explore the curriculum.</p>
     <p>
       If you are new to coding, we recommend you{' '}
       <Link to={slug}>start at the beginning</Link>.

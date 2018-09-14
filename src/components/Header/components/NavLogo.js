@@ -2,8 +2,10 @@ import React from 'react';
 import Media from 'react-media';
 
 const fCClogo =
-  'https://dl.dropbox.com/s/axj20gzbebk3pio/teencodecamp_logo.png?raw=1';
-const fCCglyph = 'https://s3.amazonaws.com/freecodecamp/FFCFire.png';
+  'https://www.dropbox.com/s/4552naguuj98xpw/spiraladder-logo-150x25.png?raw=1';
+const fCCglyph =
+  'https://www.dropbox.com/s/hg46kc4pc492e32/' +
+  'spiraladder-responsive-logo-small-transparent-448x315.png?raw=1';
 
 function NavLogo() {
   return (

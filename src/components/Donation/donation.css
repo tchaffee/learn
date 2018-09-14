@@ -72,6 +72,22 @@
   margin: 0 10px;
 }
 
+.donation-coupon-container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.donation-coupon-container label {
+  display: flex;
+  flex-direction: column;
+}
+
+.donation-coupon-container input {
+  color: #006400;
+  font-weight: normal;
+  border: none;
+}
+
 .donation-email-container {
   width: 80%;
   margin: 0 auto;

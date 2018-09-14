@@ -21,7 +21,7 @@ const propTypes = {
 };
 
 const RSA =
-  'https://forum.freecodecamp.org/t/the-read-search-ask-methodology-for-' +
+  'https://forum.spiraladder.com/t/the-read-search-ask-methodology-for-' +
   'getting-unstuck/137307';
 
 export class HelpModal extends PureComponent {
@@ -43,7 +43,7 @@ export class HelpModal extends PureComponent {
             If you've already tried the&nbsp;
             <a href={RSA} target='_blank' title='Read, search, ask'>
               Read-Search-Ask
-            </a>&nbsp; method, then you can ask for help on the freeCodeCamp
+            </a>&nbsp; method, then you can ask for help on the Spiraladder
             forum.
           </h3>
           <Button

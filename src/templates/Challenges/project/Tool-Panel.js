@@ -4,44 +4,27 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { Button } from 'react-bootstrap';
 
-import { openModal } from '../redux';
-
 const mapStateToProps = () => ({});
 
 const mapDispatchToProps = dispatch =>
   bindActionCreators(
-    {
-      openHelpModal: () => openModal('help')
-    },
+    {},
     dispatch
   );
 
 const propTypes = {
-  guideUrl: PropTypes.string,
-  openHelpModal: PropTypes.func.isRequired
 };
 
 export class ToolPanel extends PureComponent {
   render() {
-    const { guideUrl, openHelpModal } = this.props;
     return (
       <div className='tool-panel-group project-tool-panel'>
-        {guideUrl && (
-          <Button
-            block={true}
-            bsStyle='primary'
-            className='btn-primary-invert'
-            href={guideUrl}
-            target='_blank'
-            >
-            Get a hint
-          </Button>
-        )}
         <Button
           block={true}
           bsStyle='primary'
           className='btn-primary-invert'
-          onClick={openHelpModal}
+          href='https://forum.spiraladder.com/'
+          target='_blank'
           >
           Ask for help
         </Button>

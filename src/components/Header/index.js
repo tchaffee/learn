@@ -1,7 +1,6 @@
 /* global HOME_PATH */
 import React from 'react';
 import Link from 'gatsby-link';
-import FCCSearch from 'react-freecodecamp-search';
 
 import NavLogo from './components/NavLogo';
 import UserState from './components/UserState';
@@ -15,7 +14,6 @@ function Header() {
         <a className='home-link' href={HOME_PATH}>
           <NavLogo />
         </a>
-        <FCCSearch />
         <ul id='top-right-nav'>
           <li>
             <Link to='/'>Curriculum</Link>

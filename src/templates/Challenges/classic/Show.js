@@ -213,7 +213,7 @@ class ShowClassic extends PureComponent {
     const blockNameTitle = `${blockName}: ${title}`;
     return (
       <Fragment>
-        <Helmet title={`${blockNameTitle} | Learn freeCodeCamp`} />
+        <Helmet title={`${blockNameTitle} | Learn Spiraladder`} />
         <ReflexContainer orientation='vertical'>
           <ReflexElement flex={1} {...this.resizeProps}>
             <SidePanel

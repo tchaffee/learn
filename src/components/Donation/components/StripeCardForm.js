@@ -8,6 +8,7 @@ import {
 import { ControlLabel, FormGroup } from 'react-bootstrap';
 
 const propTypes = {
+  coupon: PropTypes.string,
   getValidationState: PropTypes.func.isRequired
 };
 
@@ -74,7 +75,7 @@ class StripCardForm extends PureComponent {
     return (
       <div className='donation-elements'>
         <FormGroup>
-          <ControlLabel>Card Number:</ControlLabel>
+          <ControlLabel>Or pay using Card Number:</ControlLabel>
           <CardNumberElement onChange={this.handleInputChange} style={style} />
         </FormGroup>
         <FormGroup>

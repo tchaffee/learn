@@ -13,7 +13,6 @@ const mapDispatchToProps = dispatch =>
   bindActionCreators(
     {
       executeChallenge,
-      openHelpModal: () => openModal('help'),
       openResetModal: () => openModal('reset')
     },
     dispatch
@@ -21,16 +20,12 @@ const mapDispatchToProps = dispatch =>
 
 const propTypes = {
   executeChallenge: PropTypes.func.isRequired,
-  guideUrl: PropTypes.string,
-  openHelpModal: PropTypes.func.isRequired,
   openResetModal: PropTypes.func.isRequired
 };
 
 function ToolPanel({
   executeChallenge,
-  openHelpModal,
-  openResetModal,
-  guideUrl
+  openResetModal
 }) {
   return (
     <Fragment>
@@ -46,22 +41,12 @@ function ToolPanel({
           >
           Reset All Code
         </Button>
-        {guideUrl ? (
-          <Button
-            block={true}
-            bsStyle='primary'
-            className='btn-primary-invert'
-            href={guideUrl}
-            target='_blank'
-            >
-            Get a hint
-          </Button>
-        ) : null}
         <Button
           block={true}
           bsStyle='primary'
           className='btn-primary-invert'
-          onClick={openHelpModal}
+          href='https://forum.spiraladder.com/'
+          target='_blank'
           >
           Ask for help
         </Button>

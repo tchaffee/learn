@@ -9,7 +9,7 @@ export const getNS = () => ns;
 const initialState = {
   expandedState: {
     superBlock: {
-      'Responsive Web Design': true
+      'Beginner Web Programming': true
     },
     block: {
       'basic-html-and-html5': true

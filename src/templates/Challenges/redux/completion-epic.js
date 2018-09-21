@@ -127,7 +127,10 @@ const submitters = {
 };
 
 function shouldShowDonate(state) {
-  return shouldShowDonationSelector(state) ? of(openDonationModal()) : empty();
+  // Never show donations for now. It's broken since it doesn't change the user
+  // state for the "isDonating" attribute.
+  return empty();
+  // return shouldShowDonationSelector(state) ? of(openDonationModal()) : empty();
 }
 
 export default function completionEpic(action$, { getState }) {
